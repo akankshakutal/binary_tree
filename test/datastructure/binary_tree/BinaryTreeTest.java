@@ -27,4 +27,16 @@ class BinaryTreeTest {
   void addNode1() {
     assertFalse(binaryTree.add(4));
   }
+
+  @Test
+  @DisplayName("should return true while deleting existing node")
+  void deleteNode() {
+    assertTrue(binaryTree.delete(4));
+  }
+
+  @Test
+  @DisplayName("should return false while deleting non-existing node")
+  void deleteNode1() {
+    assertFalse(binaryTree.delete(5));
+  }
 }
