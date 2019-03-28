@@ -9,10 +9,10 @@ class BinaryTree {
       return new Node(value);
     }
     if (value < current.value) {
-      current.left = this.addNode(current.left, value);
+      current.left = addNode(current.left, value);
     }
     if (value > current.value) {
-      current.right = this.addNode(current.right, value);
+      current.right = addNode(current.right, value);
     }
     return current;
   }
@@ -39,12 +39,8 @@ class BinaryTree {
   }
 
   private Node deleteRecursive(Node current, int value) {
-    if (current == null) {
-      return null;
-    }
     if (value == current.value) {
       return getNode(current);
-
     }
     if (value < current.value) {
       current.left = deleteRecursive(current.left, value);
@@ -76,7 +72,7 @@ class BinaryTree {
   }
 
   boolean delete(int value) {
-    if(!contains(value)){
+    if (!contains(value)) {
       return false;
     }
     rootNode = deleteRecursive(rootNode, value);
