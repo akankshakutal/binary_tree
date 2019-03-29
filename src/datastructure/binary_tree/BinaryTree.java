@@ -40,7 +40,7 @@ class BinaryTree {
 
   private Node deleteRecursive(Node current, int value) {
     if (value == current.value) {
-      return getNode(current);
+      return getNodeToDelete(current);
     }
     if (value < current.value) {
       current.left = deleteRecursive(current.left, value);
@@ -50,7 +50,7 @@ class BinaryTree {
     return current;
   }
 
-  private Node getNode(Node current) {
+  private Node getNodeToDelete(Node current) {
     if (current.left == null && current.right == null)
       return null;
     if (current.right == null)
